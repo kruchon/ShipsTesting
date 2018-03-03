@@ -1,0 +1,20 @@
+mscdocument Test8;
+msc Test8;
+Simulator: instance;
+Strategy: instance;
+Simulator: out InitDataComplete,1 to Strategy;
+Strategy: in InitDataComplete,1 from Simulator;
+Simulator: out ShipsCurrentState,2(1, (: (. 1, 1, PATROL_BOAT, 0, NORTH, 1, (. 30, 30 .), (: 10, 10, 10, 0 :), 0, 0, 0, (. 10, 40 .) .), (. 2, 2, CRUISER, 0, NORTH, 0, (. 29, 30 .), (: 10, 10, 10, 0 :), 0, 0, 0, (. 10, 40 .) .) :)) to Strategy;
+Strategy: in ShipsCurrentState,2(1, (: (. 1, 1, PATROL_BOAT, 0, NORTH, 1, (. 30, 30 .), (: 10, 10, 10, 0 :), 0, 0, 0, (. 10, 40 .) .), (. 2, 2, CRUISER, 0, NORTH, 0, (. 29, 30 .), (: 10, 10, 10, 0 :), 0, 0, 0, (. 10, 40 .) .) :)) from Simulator;
+
+Simulator: out VisibleShip,3(1, (: (. 2, 2, DESTROYER, 1, WEST, (. 30, 30 .) .) :)) to Strategy;
+Strategy: in VisibleShip,3(1, (: (. 2, 2, DESTROYER, 1, WEST, (. 30, 30 .) .) :)) from Simulator;
+
+Simulator: out StartSimulation,4(1) to Strategy;
+Strategy: in StartSimulation,4(1) from Simulator;
+
+Strategy: out FinishSimulation,8(1, 1) to Simulator;
+Simulator: in FinishSimulation,8(1, 1) from Strategy;
+Strategy: endinstance;
+Simulator: endinstance;
+endmsc;

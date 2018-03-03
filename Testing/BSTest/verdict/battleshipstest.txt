@@ -1,0 +1,13 @@
+RMRK: Test case Test8N0 started. (Iteration:0)
+{000000}[0005] SEND: InitDataComplete <Simulator->Strategy>
+{000000}[0007] SEND: ShipsCurrentState(1,(: (. 1, 1, 5, 0, 0, 1, (. 30, 30 .), (: 10, 10, 10, 0 :), 0, 0, 0, (. 10, 40 .) .), (. 2, 2, 1, 0, 0, 0, (. 29, 30 .), (: 10, 10, 10, 0 :), 0, 0, 0, (. 10, 40 .) .) :)) <Simulator->Strategy>
+{000000}[0009] SEND: VisibleShip(1,(: (. 2, 2, 2, 1, 6, (. 30, 30 .) .) :)) <Simulator->Strategy>
+{000000}[0011] SEND: StartSimulation(1) <Simulator->Strategy>
+ERROR: Timeout error
+There are 4 signals left in the Queue:
+-- {004090} RECV: found(30,30) <Strategy->Simulator>
+-- {004090} RECV: booms(2) <Strategy->Simulator>
+-- {004090} RECV: OrderFireRequest(2,1,0,(: (. 29, 30 .) :)) <Strategy->Simulator>
+-- {004090} RECV: FinishSimulation(1,1) <Strategy->Simulator>
+RMRK: Test Test8N0 finished. Status=TAT_ERR_TIMEOUT (Iteration: 0)
+
